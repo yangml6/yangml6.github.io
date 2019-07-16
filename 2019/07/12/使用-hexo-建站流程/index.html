@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -80,7 +80,6 @@
 
 
 <meta name="description" content="一、参考文章： next 主题文档：http://theme-next.iissnan.com/getting-started.html hexo 文档：https://hexo.io/zh-cn/docs/](https://hexo.io/zh-cn/docs/h https://www.jianshu.com/p/21c94eb7bcd1 https://winney07.github.io">
-<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 hexo 建站流程">
 <meta property="og:url" content="http://yoursite.com/2019/07/12/使用-hexo-建站流程/index.html">
@@ -88,7 +87,7 @@
 <meta property="og:description" content="一、参考文章： next 主题文档：http://theme-next.iissnan.com/getting-started.html hexo 文档：https://hexo.io/zh-cn/docs/](https://hexo.io/zh-cn/docs/h https://www.jianshu.com/p/21c94eb7bcd1 https://winney07.github.io">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-d0dc0cfbf92c0545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-07-12T03:36:56.414Z">
+<meta property="og:updated_time" content="2019-07-16T05:11:12.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 hexo 建站流程">
 <meta name="twitter:description" content="一、参考文章： next 主题文档：http://theme-next.iissnan.com/getting-started.html hexo 文档：https://hexo.io/zh-cn/docs/](https://hexo.io/zh-cn/docs/h https://www.jianshu.com/p/21c94eb7bcd1 https://winney07.github.io">
@@ -189,16 +188,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
           </a>
         </li>
       
@@ -372,6 +361,8 @@
 <li><p>给模板添加分类属性：<br><code>vim scaffolds/post.md</code> 给它的头部加上categories，这样我们创建的所有新的文章都会自带这个属性，只需要往里填分类，就可以自动在网站上形成分类，tags 同理</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br></pre></td></tr></table></figure>
 </li>
+<li><p><code>vim /hexo/themes/next/_config.yml</code> 打开 menu 部分对应</p>
+</li>
 <li><p>创建效果<img src="https://upload-images.jianshu.io/upload_images/14966968-d0dc0cfbf92c0545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 </li>
 </ol>
@@ -429,12 +420,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-        </div>
-      
 
       
       
@@ -453,6 +438,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/16/pick-项目技术说明/" rel="prev" title="pick 项目技术说明">
+                pick 项目技术说明 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +518,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -540,21 +529,12 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
             
 
           </nav>
