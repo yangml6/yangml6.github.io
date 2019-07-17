@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="docs：https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html https://www.hi-linux.com/posts/25047.html   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(">
+<meta name="description" content="Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)，Go语言开发，是Google BorgMon监控系统的开源版本。 Kubernetes —— 容器集群管理系统Prometheus —— 用于 Kubernetes 集群的监控系统中 Prometheus 特点： （1） 强大的多维度数据模型： 时间序列数据通过 metric 名和键值对来区分。 所有的">
 <meta name="keywords" content="Prometheus,k8s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Prometheus（一）背景">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/Prometheus（一）背景/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="docs：https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html https://www.hi-linux.com/posts/25047.html   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(">
+<meta property="og:description" content="Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)，Go语言开发，是Google BorgMon监控系统的开源版本。 Kubernetes —— 容器集群管理系统Prometheus —— 用于 Kubernetes 集群的监控系统中 Prometheus 特点： （1） 强大的多维度数据模型： 时间序列数据通过 metric 名和键值对来区分。 所有的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-d61f70c0e2172469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-07-17T08:18:08.646Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/17/Prometheus（一）背景/7-17-8.jpeg">
+<meta property="og:updated_time" content="2019-07-17T08:56:57.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Prometheus（一）背景">
-<meta name="twitter:description" content="docs：https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html https://www.hi-linux.com/posts/25047.html   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14966968-d61f70c0e2172469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)，Go语言开发，是Google BorgMon监控系统的开源版本。 Kubernetes —— 容器集群管理系统Prometheus —— 用于 Kubernetes 集群的监控系统中 Prometheus 特点： （1） 强大的多维度数据模型： 时间序列数据通过 metric 名和键值对来区分。 所有的">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/17/Prometheus（一）背景/7-17-8.jpeg">
 
 
 
@@ -344,11 +344,7 @@
       
 
       
-        <ul>
-<li>docs：<a href="https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html</a></li>
-<li><a href="https://www.hi-linux.com/posts/25047.html" target="_blank" rel="noopener">https://www.hi-linux.com/posts/25047.html</a></li>
-</ul>
-<ol>
+        <ol>
 <li>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)，Go语言开发，是Google BorgMon监控系统的开源版本。</li>
 <li>Kubernetes —— 容器集群管理系统<br>Prometheus —— 用于 Kubernetes 集群的监控系统中</li>
 <li>Prometheus 特点：<br> （1） 强大的多维度数据模型：<ul>
@@ -360,7 +356,7 @@
 </ul>
 </li>
 <li>注意：<br>由于数据采集可能会有丢失，所以 Prometheus 不适用对采集数据要 100% 准确的情形。但如果用于记录时间序列数据，Prometheus 具有很大的查询优势，此外，Prometheus 适用于微服务的体系架构</li>
-<li>Prometheus 的主要模块包括：Prometheus server, exporters, Pushgateway, PromQL, Alertmanager 以及图形界面。<br><img src="https://upload-images.jianshu.io/upload_images/14966968-d61f70c0e2172469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Prometheus 架构图"></li>
+<li>Prometheus 的主要模块包括：Prometheus server, exporters, Pushgateway, PromQL, Alertmanager 以及图形界面。<br><img src="7-17-8.jpeg" alt="Prometheus 架构图"></li>
 </ol>
 <p><strong>工作流程</strong>：</p>
 <ul>
@@ -368,6 +364,11 @@
 <li>Prometheus server 在本地存储收集到的 metrics，并运行已定义好的 alert.rules，记录新的时间序列或者向 Alertmanager 推送警报。</li>
 <li>Alertmanager 根据配置文件，对接收到的警报进行处理，发出告警。</li>
 <li>在图形界面中，可视化采集数据。</li>
+</ul>
+<p>参考链接：</p>
+<ul>
+<li>docs：<a href="https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html</a></li>
+<li><a href="https://www.hi-linux.com/posts/25047.html" target="_blank" rel="noopener">https://www.hi-linux.com/posts/25047.html</a></li>
 </ul>
 
       

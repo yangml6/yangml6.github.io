@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="放在：/usr/local/prometheus/   Linux 安装 Prometheus 123$ wget  https://github.com/prometheus/prometheus/releases/download/v1.6.3/prometheus-1.6.3.linux-amd64.tar.gz$ tar xzvf prometheus-1.6.3.linux-amd64">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T08:53:36.922Z">
+<meta property="og:updated_time" content="2019-07-17T08:54:59.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Prometheus（二）安装启动">
 <meta name="twitter:description" content="放在：/usr/local/prometheus/   Linux 安装 Prometheus 123$ wget  https://github.com/prometheus/prometheus/releases/download/v1.6.3/prometheus-1.6.3.linux-amd64.tar.gz$ tar xzvf prometheus-1.6.3.linux-amd64">
@@ -364,9 +364,11 @@
 <li><p>创建Systemd服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/systemd/system/prometheus.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=prometheus</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=prometheus</span><br><span class="line">ExecStart=/usr/local/prometheus/prometheus -config.file=/usr/local/prometheus/prometheus.yml -storage.local.path=/var/lib/prometheus</span><br><span class="line">Restart=on-failure</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>启动Prometheus<code>$ systemctl start prometheus</code></p>
+<li><p>启动Prometheus</p>
 </li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start prometheus</span><br></pre></td></tr></table></figure>
+
 <ol start="8">
 <li>验证Prometheus是否启动成功</li>
 </ol>
