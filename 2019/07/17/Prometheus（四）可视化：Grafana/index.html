@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/images/7-17-3.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/7-17-4.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/7-17-5.jpeg">
-<meta property="og:updated_time" content="2019-07-17T08:43:24.796Z">
+<meta property="og:updated_time" content="2019-07-17T08:46:05.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Prometheus（四）可视化：Grafana">
 <meta name="twitter:description" content="Prometheus Web界面自带的图表是非常基础的，比较适合用来做测试。如果要构建强大的Dashboard，使用Grafana来对Prometheus采集到的数据进行可视化展示。  Grafana是用于可视化大型测量数据的开源程序，提供了强大和优雅的方式去创建、共享、浏览数据。Dashboard中显示了不同metric数据源中的数据。  Grafana最常用于因特网基础设施和应用分析，但在其">
@@ -369,29 +369,33 @@
 <li><p>查看Grafana是否启动成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status grafana-server</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>访问Grafana<br>通过 <code>http://ip:3000</code> 访问Grafana Web界面<br>缺省帐号/密码为：admin/admin<br><img src="/images/7-17-1.jpeg" alt></p>
-</li>
-<li><p>在Grafana中添加Prometheus数据源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name:Prometheus</span><br><span class="line">Type:Prometheus</span><br><span class="line">Url:http://localhost:9090/</span><br><span class="line">Access:proxy</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><img src="/images/7-17-2.jpeg" alt></p>
-</li>
-<li><p>在Dashboards页面导入自带的Prometheus Status模板<br><img src="/images/7-17-3.jpeg" alt></p>
-</li>
-</ul>
+<li><p>访问Grafana<br>通过 <code>http://ip:3000</code> 访问Grafana Web界面<br>缺省帐号/密码为：admin/admin</p>
 </li>
 </ol>
+<p><img src="/images/7-17-1.jpeg" alt></p>
+<ol>
+<li>在Grafana中添加Prometheus数据源<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name:Prometheus</span><br><span class="line">Type:Prometheus</span><br><span class="line">Url:http://localhost:9090/</span><br><span class="line">Access:proxy</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><img src="/images/7-17-2.jpeg" alt></p>
+<ul>
+<li>在Dashboards页面导入自带的Prometheus Status模板</li>
+</ul>
+<p><img src="/images/7-17-3.jpeg" alt></p>
 <ul>
 <li><p>导入Node Exporter Server Metrics模板<br>访问<a href="https://grafana.com/dashboards/405，从这里下载Node" target="_blank" rel="noopener">https://grafana.com/dashboards/405，从这里下载Node</a> Exporter Server Metrics模板的JSON文件。</p>
 </li>
 <li><p>在Grafana–Dashboard中导入这个文件，数据源选择Prometheus。</p>
 </li>
-<li><p>访问Dashboards<br>在Dashboards上选Node Exporter Server Metrics模板，就可以看到被监控服务器的CPU, 内存, 磁盘等统计信息。<img src="/images/7-17-4.jpeg" alt></p>
-</li>
-<li><p>在Dashboards上选Prometheus Status模板，查看Prometheus各项指标数据。<br><img src="/images/7-17-5.jpeg" alt></p>
+<li><p>访问Dashboards<br>在Dashboards上选Node Exporter Server Metrics模板，就可以看到被监控服务器的CPU, 内存, 磁盘等统计信息。</p>
 </li>
 </ul>
+<p><img src="/images/7-17-4.jpeg" alt></p>
+<ul>
+<li>在Dashboards上选Prometheus Status模板，查看Prometheus各项指标数据。</li>
+</ul>
+<p><img src="/images/7-17-5.jpeg" alt></p>
 <p>参考文档：<br><a href="https://www.hi-linux.com/posts/25047.html" target="_blank" rel="noopener">https://www.hi-linux.com/posts/25047.html</a><br><a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br><a href="https://github.com/1046102779/prometheus" target="_blank" rel="noopener">https://github.com/1046102779/prometheus</a><br><a href="http://liubin.org/blog/2016/02/18/tsdb-intro/" target="_blank" rel="noopener">http://liubin.org/blog/2016/02/18/tsdb-intro/</a><br><a href="http://www.cnblogs.com/vovlie/p/Prometheus_install.html" target="_blank" rel="noopener">http://www.cnblogs.com/vovlie/p/Prometheus_install.html</a><br><a href="https://www.addops.cn/post/Prometheus-first-exploration.html" target="_blank" rel="noopener">https://www.addops.cn/post/Prometheus-first-exploration.html</a><br><a href="http://blog.frognew.com/2017/02/use-prometheus-on-centos7.html" target="_blank" rel="noopener">http://blog.frognew.com/2017/02/use-prometheus-on-centos7.html</a></p>
 
       
