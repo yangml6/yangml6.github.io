@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="yml'blog, welcome!">
+  <meta name="keywords" content="Prometheus,k8s,">
 
 
 
@@ -79,14 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="docs：https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html https://www.hi-linux.com/posts/25047.html   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(">
+<meta name="keywords" content="Prometheus,k8s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Prometheus（一）背景">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/Prometheus（一）背景/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="docs：https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html https://www.hi-linux.com/posts/25047.html   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-16T08:43:14.379Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-d61f70c0e2172469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-07-17T08:18:08.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="Prometheus（一）背景">
+<meta name="twitter:description" content="docs：https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html https://www.hi-linux.com/posts/25047.html   Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14966968-d61f70c0e2172469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -116,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/Prometheus（一）背景/">
 
 
 
 
 
-  <title>tags | Hexo</title>
+  <title>Prometheus（一）背景 | Hexo</title>
   
 
 
@@ -237,40 +243,196 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Prometheus（一）背景/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yml">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 4 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/0-1/" style="font-size: 12px; color: #ccc">0-1</a> <a href="/tags/Prometheus/" style="font-size: 30px; color: #111">Prometheus</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/k8s/" style="font-size: 30px; color: #111">k8s</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Prometheus（一）背景</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T16:08:02+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Prometheus-k8s/" itemprop="url" rel="index">
+                    <span itemprop="name">Prometheus + k8s</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <ul>
+<li>docs：<a href="https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-prometheus-getting-started-and-practice/index.html</a></li>
+<li><a href="https://www.hi-linux.com/posts/25047.html" target="_blank" rel="noopener">https://www.hi-linux.com/posts/25047.html</a></li>
+</ul>
+<ol>
+<li>Prometheus是由SoundCloud开发的开源监控报警系统和时序列数据库(TSDB)，Go语言开发，是Google BorgMon监控系统的开源版本。</li>
+<li>Kubernetes —— 容器集群管理系统<br>Prometheus —— 用于 Kubernetes 集群的监控系统中</li>
+<li>Prometheus 特点：<br> （1） 强大的多维度数据模型：<ul>
+<li>时间序列数据通过 metric 名和键值对来区分。</li>
+<li>所有的 metrics 都可以设置任意的多维标签。</li>
+<li>数据模型更随意，不需要刻意设置为以点分隔的字符串。</li>
+<li>可以对数据模型进行聚合，切割和切片操作。</li>
+<li>支持双精度浮点类型，标签可以设为全 unicode。<br>（2）灵活而强大的查询语句（PromQL）：在同一个查询语句，可以对多个 metrics 进行乘法、加法、连接、取分数位等操作。<br>（3）易于管理： Prometheus server 是一个单独的二进制文件，可直接在本地工作，不依赖于分布式存储。<br>（4）高效：平均每个采样点仅占 3.5 bytes，且一个 Prometheus server 可以处理数百万的 metrics。<br>（5）使用 pull 模式采集时间序列数据，这样不仅有利于本机测试而且可以避免有问题的服务器推送坏的 metrics。<br>（6）可以采用 push gateway 的方式把时间序列数据推送至 Prometheus server 端。<br>（7）可以通过服务发现或者静态配置去获取监控的 targets。<br>有多种可视化图形界面。<br>（8）易于伸缩。</li>
+</ul>
+</li>
+<li>注意：<br>由于数据采集可能会有丢失，所以 Prometheus 不适用对采集数据要 100% 准确的情形。但如果用于记录时间序列数据，Prometheus 具有很大的查询优势，此外，Prometheus 适用于微服务的体系架构</li>
+<li>Prometheus 的主要模块包括：Prometheus server, exporters, Pushgateway, PromQL, Alertmanager 以及图形界面。<br><img src="https://upload-images.jianshu.io/upload_images/14966968-d61f70c0e2172469.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Prometheus 架构图"></li>
+</ol>
+<p><strong>工作流程</strong>：</p>
+<ul>
+<li>Prometheus server 定期从配置好的 jobs 或者 exporters 中拉 metrics，或者接收来自 Pushgateway 发过来的 metrics，或者从其他的 Prometheus server 中拉 metrics。</li>
+<li>Prometheus server 在本地存储收集到的 metrics，并运行已定义好的 alert.rules，记录新的时间序列或者向 Alertmanager 推送警报。</li>
+<li>Alertmanager 根据配置文件，对接收到的警报进行处理，发出告警。</li>
+<li>在图形界面中，可视化采集数据。</li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Prometheus/" rel="tag"># Prometheus</a>
+          
+            <a href="/tags/k8s/" rel="tag"># k8s</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/16/pick-项目技术说明/" rel="next" title="pick 项目技术说明">
+                <i class="fa fa-chevron-left"></i> pick 项目技术说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/Prometheus（二）安装启动/" rel="prev" title="Prometheus（二）安装启动">
+                Prometheus（二）安装启动 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

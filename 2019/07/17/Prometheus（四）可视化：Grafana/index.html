@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="0-1,">
+  <meta name="keywords" content="Prometheus,k8s,">
 
 
 
@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="项目介绍pick项目出身于 2019 年 360 高校产品大赛，获得华北区第一名。每条内容为一页两栏热门话题和图片，进行两方 pk，引发大家参与讨论。 项目进展项目地址：http://47.102.*.*/p/login目前已组建 5 人团队，前后台、产品、设计、运营各一名，与一家公司进行合作中。项目方向为融合区块链技术和比特币思想，先作为插件进入平台，进行币改。  基于springboot+hi">
-<meta name="keywords" content="0-1">
+<meta name="description" content="Prometheus Web界面自带的图表是非常基础的，比较适合用来做测试。如果要构建强大的Dashboard，使用Grafana来对Prometheus采集到的数据进行可视化展示。  Grafana是用于可视化大型测量数据的开源程序，提供了强大和优雅的方式去创建、共享、浏览数据。Dashboard中显示了不同metric数据源中的数据。  Grafana最常用于因特网基础设施和应用分析，但在其">
+<meta name="keywords" content="Prometheus,k8s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pick 项目技术说明">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/pick-项目技术说明/index.html">
+<meta property="og:title" content="Prometheus（四）可视化：Grafana">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/Prometheus（四）可视化：Grafana/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="项目介绍pick项目出身于 2019 年 360 高校产品大赛，获得华北区第一名。每条内容为一页两栏热门话题和图片，进行两方 pk，引发大家参与讨论。 项目进展项目地址：http://47.102.*.*/p/login目前已组建 5 人团队，前后台、产品、设计、运营各一名，与一家公司进行合作中。项目方向为融合区块链技术和比特币思想，先作为插件进入平台，进行币改。  基于springboot+hi">
+<meta property="og:description" content="Prometheus Web界面自带的图表是非常基础的，比较适合用来做测试。如果要构建强大的Dashboard，使用Grafana来对Prometheus采集到的数据进行可视化展示。  Grafana是用于可视化大型测量数据的开源程序，提供了强大和优雅的方式去创建、共享、浏览数据。Dashboard中显示了不同metric数据源中的数据。  Grafana最常用于因特网基础设施和应用分析，但在其">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-16T08:45:21.977Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-2065effa2c79ffd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-b9d82016b4882ac1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-6c87747698b49051.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-3cf63fde9d00d858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14966968-01e2a3f0be372fad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-07-17T08:20:31.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pick 项目技术说明">
-<meta name="twitter:description" content="项目介绍pick项目出身于 2019 年 360 高校产品大赛，获得华北区第一名。每条内容为一页两栏热门话题和图片，进行两方 pk，引发大家参与讨论。 项目进展项目地址：http://47.102.*.*/p/login目前已组建 5 人团队，前后台、产品、设计、运营各一名，与一家公司进行合作中。项目方向为融合区块链技术和比特币思想，先作为插件进入平台，进行币改。  基于springboot+hi">
+<meta name="twitter:title" content="Prometheus（四）可视化：Grafana">
+<meta name="twitter:description" content="Prometheus Web界面自带的图表是非常基础的，比较适合用来做测试。如果要构建强大的Dashboard，使用Grafana来对Prometheus采集到的数据进行可视化展示。  Grafana是用于可视化大型测量数据的开源程序，提供了强大和优雅的方式去创建、共享、浏览数据。Dashboard中显示了不同metric数据源中的数据。  Grafana最常用于因特网基础设施和应用分析，但在其">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14966968-2065effa2c79ffd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/16/pick-项目技术说明/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/Prometheus（四）可视化：Grafana/">
 
 
 
 
 
-  <title>pick 项目技术说明 | Hexo</title>
+  <title>Prometheus（四）可视化：Grafana | Hexo</title>
   
 
 
@@ -253,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/pick-项目技术说明/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Prometheus（四）可视化：Grafana/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yml">
@@ -270,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">pick 项目技术说明</h1>
+          <h1 class="post-title" itemprop="name headline">Prometheus（四）可视化：Grafana</h1>
         
 
         <div class="post-meta">
@@ -282,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-16T11:59:24+08:00">
-                2019-07-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T16:13:05+08:00">
+                2019-07-17
               </time>
             
 
@@ -305,8 +311,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/pick-项目/" itemprop="url" rel="index">
-                    <span itemprop="name">pick 项目</span>
+                  <a href="/categories/Prometheus-k8s/" itemprop="url" rel="index">
+                    <span itemprop="name">Prometheus + k8s</span>
                   </a>
                 </span>
 
@@ -342,73 +348,51 @@
       
 
       
-        <h3 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h3><p><code>pick</code>项目出身于 2019 年 360 高校产品大赛，获得华北区第一名。<br>每条内容为一页两栏热门话题和图片，进行两方 pk，引发大家参与讨论。</p>
-<h3 id="项目进展"><a href="#项目进展" class="headerlink" title="项目进展"></a>项目进展</h3><p>项目地址：<a href="http://47.102.*.*/p/login" target="_blank" rel="noopener">http://47.102.*.*/p/login</a><br>目前已组建 5 人团队，前后台、产品、设计、运营各一名，与一家公司进行合作中。<br>项目方向为融合区块链技术和比特币思想，先作为插件进入平台，进行币改。</p>
-<blockquote>
-<p>基于springboot+hibernate后台开发，基于vue前端开发，实现前后端分离。</p>
-</blockquote>
-<h3 id="后端技术"><a href="#后端技术" class="headerlink" title="后端技术"></a>后端技术</h3><table>
-<thead>
-<tr>
-<th>技术</th>
-<th>名称</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Spring Boot</td>
-<td>容器+MVC框架</td>
-</tr>
-<tr>
-<td>Spring Security</td>
-<td>认证和授权框架</td>
-</tr>
-<tr>
-<td>Hibernate</td>
-<td>ORM框架</td>
-</tr>
-<tr>
-<td>MySQL</td>
-<td>MySQL数据库</td>
-</tr>
-<tr>
-<td>Druid</td>
-<td>数据库连接池</td>
-</tr>
-</tbody></table>
-<h3 id="前端技术"><a href="#前端技术" class="headerlink" title="前端技术"></a>前端技术</h3><table>
-<thead>
-<tr>
-<th>技术</th>
-<th>名称</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Vue</td>
-<td>前端框架</td>
-</tr>
-<tr>
-<td>Vue-router</td>
-<td>路由框架</td>
-</tr>
-<tr>
-<td>Vuex</td>
-<td>全局状态管理框架</td>
-</tr>
-<tr>
-<td>Element</td>
-<td>前端UI框架</td>
-</tr>
-<tr>
-<td>Axios</td>
-<td>前端HTTP框架</td>
-</tr>
-</tbody></table>
-<h3 id="后台功能"><a href="#后台功能" class="headerlink" title="后台功能"></a>后台功能</h3><ul>
-<li>后台用户登录后获取token</li>
-<li>话题分类管理：控制显示、排序、编辑删除分类</li>
-<li>查看参与的话题订单，花费的pick币</li>
-<li>查看账户的的流水</li>
+        <ul>
+<li><p>Prometheus Web界面自带的图表是非常基础的，比较适合用来做测试。如果要构建强大的Dashboard，使用Grafana来对Prometheus采集到的数据进行可视化展示。</p>
+</li>
+<li><p>Grafana是用于可视化大型测量数据的开源程序，提供了强大和优雅的方式去创建、共享、浏览数据。Dashboard中显示了不同metric数据源中的数据。</p>
+</li>
+<li><p>Grafana最常用于因特网基础设施和应用分析，但在其他领域也有用到，比如：工业传感器、家庭自动化、过程控制等等。Grafana支持热插拔控制面板和可扩展的数据源，目前已经支持Graphite、InfluxDB、OpenTSDB、Elasticsearch、Prometheus等。</p>
+</li>
 </ul>
+<ol>
+<li>安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_4.2.0_amd64.deb</span><br><span class="line">$ dpkg -i grafana_4.2.0_amd64.deb</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>下载地址：<a href="https://grafana.com/grafana/download" target="_blank" rel="noopener">https://grafana.com/grafana/download</a></p>
+<ol start="2">
+<li><p>启动Grafana</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start grafana-server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看Grafana是否启动成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status grafana-server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问Grafana<br>通过 <code>http://ip:3000</code> 访问Grafana Web界面<br>缺省帐号/密码为：admin/admin<br><img src="https://upload-images.jianshu.io/upload_images/14966968-2065effa2c79ffd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+<li><p>在Grafana中添加Prometheus数据源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Name:Prometheus</span><br><span class="line">Type:Prometheus</span><br><span class="line">Url:http://localhost:9090/</span><br><span class="line">Access:proxy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><img src="https://upload-images.jianshu.io/upload_images/14966968-b9d82016b4882ac1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+<li><p>在Dashboards页面导入自带的Prometheus Status模板<br><img src="https://upload-images.jianshu.io/upload_images/14966968-6c87747698b49051.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>导入Node Exporter Server Metrics模板<br>访问<a href="https://grafana.com/dashboards/405，从这里下载Node" target="_blank" rel="noopener">https://grafana.com/dashboards/405，从这里下载Node</a> Exporter Server Metrics模板的JSON文件。</p>
+</li>
+<li><p>在Grafana–Dashboard中导入这个文件，数据源选择Prometheus。</p>
+</li>
+<li><p>访问Dashboards<br>在Dashboards上选Node Exporter Server Metrics模板，就可以看到被监控服务器的CPU, 内存, 磁盘等统计信息。<img src="https://upload-images.jianshu.io/upload_images/14966968-3cf63fde9d00d858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+<li><p>在Dashboards上选Prometheus Status模板，查看Prometheus各项指标数据。<br><img src="https://upload-images.jianshu.io/upload_images/14966968-01e2a3f0be372fad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+</ul>
+<p>参考文档：<br><a href="https://www.hi-linux.com/posts/25047.html" target="_blank" rel="noopener">https://www.hi-linux.com/posts/25047.html</a><br><a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a><br><a href="https://github.com/1046102779/prometheus" target="_blank" rel="noopener">https://github.com/1046102779/prometheus</a><br><a href="http://liubin.org/blog/2016/02/18/tsdb-intro/" target="_blank" rel="noopener">http://liubin.org/blog/2016/02/18/tsdb-intro/</a><br><a href="http://www.cnblogs.com/vovlie/p/Prometheus_install.html" target="_blank" rel="noopener">http://www.cnblogs.com/vovlie/p/Prometheus_install.html</a><br><a href="https://www.addops.cn/post/Prometheus-first-exploration.html" target="_blank" rel="noopener">https://www.addops.cn/post/Prometheus-first-exploration.html</a><br><a href="http://blog.frognew.com/2017/02/use-prometheus-on-centos7.html" target="_blank" rel="noopener">http://blog.frognew.com/2017/02/use-prometheus-on-centos7.html</a></p>
 
       
     </div>
@@ -426,7 +410,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/0-1/" rel="tag"># 0-1</a>
+            <a href="/tags/Prometheus/" rel="tag"># Prometheus</a>
+          
+            <a href="/tags/k8s/" rel="tag"># k8s</a>
           
         </div>
       
@@ -439,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/12/使用-hexo-建站流程/" rel="next" title="使用 hexo 建站流程">
-                <i class="fa fa-chevron-left"></i> 使用 hexo 建站流程
+              <a href="/2019/07/17/Prometheus（三）监控服务器：node-exporter/" rel="next" title="Prometheus（三）监控服务器：node_exporter">
+                <i class="fa fa-chevron-left"></i> Prometheus（三）监控服务器：node_exporter
               </a>
             
           </div>
@@ -449,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/17/Prometheus（一）背景/" rel="prev" title="Prometheus（一）背景">
-                Prometheus（一）背景 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/17/Prometheus（五）对比Graphite/" rel="prev" title="Prometheus（五）对比Graphite">
+                Prometheus（五）对比Graphite <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -503,17 +489,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -585,22 +562,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目进展"><span class="nav-number">2.</span> <span class="nav-text">项目进展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端技术"><span class="nav-number">3.</span> <span class="nav-text">后端技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端技术"><span class="nav-number">4.</span> <span class="nav-text">前端技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台功能"><span class="nav-number">5.</span> <span class="nav-text">后台功能</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
