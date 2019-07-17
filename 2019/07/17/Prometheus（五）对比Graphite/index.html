@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="https://prometheus.io/docs/introduction/comparison/ https://toutiao.io/posts/fsjq8t/preview  总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。 一、适用范围Graphite：  一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行 作为被动机制的时间序列数据">
+<meta name="description" content="总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。 一、适用范围Graphite：  一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行 作为被动机制的时间序列数据库，有自己的查询语言和绘图方式。其他特性需要通过外部组件来实现 由三个软件组件组成： carbon：一个Twisted守护进程，监听并接收时间序列数据 whisper：固定大小文件的数据库">
 <meta name="keywords" content="Prometheus,k8s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Prometheus（五）对比Graphite">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/Prometheus（五）对比Graphite/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="https://prometheus.io/docs/introduction/comparison/ https://toutiao.io/posts/fsjq8t/preview  总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。 一、适用范围Graphite：  一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行 作为被动机制的时间序列数据">
+<meta property="og:description" content="总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。 一、适用范围Graphite：  一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行 作为被动机制的时间序列数据库，有自己的查询语言和绘图方式。其他特性需要通过外部组件来实现 由三个软件组件组成： carbon：一个Twisted守护进程，监听并接收时间序列数据 whisper：固定大小文件的数据库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T08:22:14.172Z">
+<meta property="og:updated_time" content="2019-07-17T08:25:50.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Prometheus（五）对比Graphite">
-<meta name="twitter:description" content="https://prometheus.io/docs/introduction/comparison/ https://toutiao.io/posts/fsjq8t/preview  总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。 一、适用范围Graphite：  一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行 作为被动机制的时间序列数据">
+<meta name="twitter:description" content="总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。 一、适用范围Graphite：  一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行 作为被动机制的时间序列数据库，有自己的查询语言和绘图方式。其他特性需要通过外部组件来实现 由三个软件组件组成： carbon：一个Twisted守护进程，监听并接收时间序列数据 whisper：固定大小文件的数据库">
 
 
 
@@ -342,11 +342,7 @@
       
 
       
-        <ul>
-<li><a href="https://prometheus.io/docs/introduction/comparison/" target="_blank" rel="noopener">https://prometheus.io/docs/introduction/comparison/</a></li>
-<li><a href="https://toutiao.io/posts/fsjq8t/preview" target="_blank" rel="noopener">https://toutiao.io/posts/fsjq8t/preview</a></li>
-</ul>
-<p>总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。</p>
+        <p>总结：白盒监控，或者需要监控一个动态的云环境，Prometheus更优。</p>
 <h4 id="一、适用范围"><a href="#一、适用范围" class="headerlink" title="一、适用范围"></a>一、适用范围</h4><p><strong>Graphite：</strong></p>
 <ul>
 <li>一个Python写的web应用，企业级的系统监控工具，可以在廉价机硬件上运行</li>
@@ -380,41 +376,35 @@
 </ol>
 <p><strong>例子</strong></p>
 <ul>
-<li>使用Graphite/StatsD存储状态码为500、方法是POST、路径是”/tracks”、服务名称为api-server(api-server有多个实例)的http请求数，这样一个监控指标：<figure class="highlight plain"><figcaption><span>-> 93```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 使用Prometheus存储同样的监控指标：</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>使用Graphite/StatsD存储状态码为500、方法是POST、路径是”/tracks”、服务名称为api-server(api-server有多个实例)的http请求数，这样一个监控指标：<br><code>stats.api-server.tracks.post.500 -&gt; 93</code></li>
+<li>使用Prometheus存储同样的监控指标：</li>
 </ul>
-<p>api_server_http_requests_total{method=”POST”,handler=”/tracks”,status=”500”,instance=”<sample1>“} -&gt; 34<br>api_server_http_requests_total{method=”POST”,handler=”/tracks”,status=”500”,instance=”<sample2>“} -&gt; 28<br>api_server_http_requests_total{method=”POST”,handler=”/tracks”,status=”500”,instance=”<sample3>“} -&gt; 31</sample3></sample2></sample1></p>
-<pre><code>即：Prometheus支持更高维度的监控指标
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">api_server_http_requests_total&#123;method=&quot;POST&quot;,handler=&quot;/tracks&quot;,status=&quot;500&quot;,instance=&quot;&lt;sample1&gt;&quot;&#125; -&gt; 34</span><br><span class="line">api_server_http_requests_total&#123;method=&quot;POST&quot;,handler=&quot;/tracks&quot;,status=&quot;500&quot;,instance=&quot;&lt;sample2&gt;&quot;&#125; -&gt; 28</span><br><span class="line">api_server_http_requests_total&#123;method=&quot;POST&quot;,handler=&quot;/tracks&quot;,status=&quot;500&quot;,instance=&quot;&lt;sample3&gt;&quot;&#125; -&gt; 31</span><br></pre></td></tr></table></figure>
 
-#### 三、存储
+<p>即：Prometheus支持更高维度的监控指标</p>
+<h4 id="三、存储"><a href="#三、存储" class="headerlink" title="三、存储"></a>三、存储</h4><ul>
+<li><strong>Graphite</strong> 使用Whisper格式在本地磁盘存储时间序列数据。Whisper是RRD-style database，它要求到达的采样数据间隔固定。每一个时间序列存储在一个单独的文件，在一定时间之后新的采样数据会覆盖老得数据。</li>
+<li><strong>Prometheus</strong> 也为每一个时间序列创建一个本地文件，但是允许以任意时间间隔存储采样数据(数据采集、规则计算评估时间任意)。旧数据可以是任意长度，新的采样数据只是简单的附加在老数据的后面。Prometheus针对短生命周期、频繁更改标签集合的时间序列也能和好的支持。</li>
+</ul>
+<h4 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h4><ul>
+<li>Prometheus提供更丰富的数据模型和查询语句，此外还易于运行、整合到已有环境中。</li>
+<li>如果想要集群化的解决方案，能够存储长期的历史数据，Graphite可能是更好的选择。</li>
+<li>白盒监控，或者需要监控一个动态的云环境，Prometheus更优。</li>
+</ul>
+<h4 id="具体的关于-Prometheus"><a href="#具体的关于-Prometheus" class="headerlink" title="具体的关于 Prometheus"></a>具体的关于 Prometheus</h4><p>Prometheus适用的场景</p>
+<ul>
+<li>记录纯数字时间序列方面表现非常好。既适用于面向服务器等硬件指标的监控，也适用于高动态的面向服务架构的监控。对于现在流行的微服务，Prometheus的多维度数据收集和数据筛选查询语言也是非常的强大。Prometheus是为服务的可靠性而设计的，当服务出现故障时，它可以使你快速定位和诊断问题。它的搭建过程对硬件和服务没有很强的依赖关系。</li>
+</ul>
+<p>Prometheus不适用的场景</p>
+<ul>
+<li>Prometheus它的价值在于可靠性，甚至在很恶劣的环境下，你都可以随时访问它和查看系统服务各种指标的统计信息。 如果你对统计数据需要100%的精确，它并不适用，例如：它不适用于实时计费系统。</li>
+</ul>
+<p>参考链接：<br>Prometheus官网：<a href="https://prometheus.io/" target="_blank" rel="noopener">https://prometheus.io/</a></p>
+<ul>
+<li><a href="https://prometheus.io/docs/introduction/comparison/" target="_blank" rel="noopener">https://prometheus.io/docs/introduction/comparison/</a></li>
+<li><a href="https://toutiao.io/posts/fsjq8t/preview" target="_blank" rel="noopener">https://toutiao.io/posts/fsjq8t/preview</a></li>
+</ul>
 
-- **Graphite** 使用Whisper格式在本地磁盘存储时间序列数据。Whisper是RRD-style database，它要求到达的采样数据间隔固定。每一个时间序列存储在一个单独的文件，在一定时间之后新的采样数据会覆盖老得数据。
-- **Prometheus** 也为每一个时间序列创建一个本地文件，但是允许以任意时间间隔存储采样数据(数据采集、规则计算评估时间任意)。旧数据可以是任意长度，新的采样数据只是简单的附加在老数据的后面。Prometheus针对短生命周期、频繁更改标签集合的时间序列也能和好的支持。
-
-#### 四、总结
-- Prometheus提供更丰富的数据模型和查询语句，此外还易于运行、整合到已有环境中。
-- 如果想要集群化的解决方案，能够存储长期的历史数据，Graphite可能是更好的选择。
-- 白盒监控，或者需要监控一个动态的云环境，Prometheus更优。
-
-#### 具体的关于 Prometheus
-Prometheus适用的场景
-- 记录纯数字时间序列方面表现非常好。既适用于面向服务器等硬件指标的监控，也适用于高动态的面向服务架构的监控。对于现在流行的微服务，Prometheus的多维度数据收集和数据筛选查询语言也是非常的强大。Prometheus是为服务的可靠性而设计的，当服务出现故障时，它可以使你快速定位和诊断问题。它的搭建过程对硬件和服务没有很强的依赖关系。
-
-Prometheus不适用的场景
-- Prometheus它的价值在于可靠性，甚至在很恶劣的环境下，你都可以随时访问它和查看系统服务各种指标的统计信息。 如果你对统计数据需要100%的精确，它并不适用，例如：它不适用于实时计费系统。
-
-Prometheus官网：https://prometheus.io/
-
-
-
-
-
-
-
-
-
-</code></pre>
       
     </div>
     
@@ -446,8 +436,8 @@ Prometheus官网：https://prometheus.io/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/Prometheus（四）可视化：Grafana/" rel="next" title="Prometheus（四）可视化：Grafana">
-                <i class="fa fa-chevron-left"></i> Prometheus（四）可视化：Grafana
+              <a href="/2019/07/17/Prometheus（五）对比-Graphite/" rel="next" title="Prometheus（五）对比 Graphite">
+                <i class="fa fa-chevron-left"></i> Prometheus（五）对比 Graphite
               </a>
             
           </div>
@@ -533,7 +523,7 @@ Prometheus官网：https://prometheus.io/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,7 +588,7 @@ Prometheus官网：https://prometheus.io/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、适用范围"><span class="nav-number">1.</span> <span class="nav-text">一、适用范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、数据模型"><span class="nav-number">2.</span> <span class="nav-text">二、数据模型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、适用范围"><span class="nav-number">1.</span> <span class="nav-text">一、适用范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、数据模型"><span class="nav-number">2.</span> <span class="nav-text">二、数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、存储"><span class="nav-number">3.</span> <span class="nav-text">三、存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体的关于-Prometheus"><span class="nav-number">5.</span> <span class="nav-text">具体的关于 Prometheus</span></a></li></ol></div>
             
 
           </div>
