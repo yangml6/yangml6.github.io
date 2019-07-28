@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ； 堆选快希 不稳定 快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分 拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，">
+<meta name="description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查找、排序">
 <meta property="og:url" content="http://yoursite.com/2019/07/28/查找、排序/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ； 堆选快希 不稳定 快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分 拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，">
+<meta property="og:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/image/7-28-1.jpeg">
-<meta property="og:updated_time" content="2019-07-28T03:30:35.699Z">
+<meta property="og:image" content="http://yoursite.com/image/7-28-2.jpeg">
+<meta property="og:updated_time" content="2019-07-28T03:45:45.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查找、排序">
-<meta name="twitter:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ； 堆选快希 不稳定 快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分 拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，">
+<meta name="twitter:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
 <meta name="twitter:image" content="http://yoursite.com/image/7-28-1.jpeg">
 
 
@@ -347,10 +348,19 @@
         <p>一、<font color="#dd0000">排序</font></p>
 <p>程序员小吴：<a href="https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html" target="_blank" rel="noopener">https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html</a><br><img src="/image/7-28-1.jpeg" alt></p>
 <ul>
-<li>堆选归基 与初始序列无关 ； 堆选快希 不稳定</li>
-<li>快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分</li>
-<li>拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，即表示有顶点自己以自己为先决条件，这是错误的】</li>
-<li>基数排序：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</li>
+<li><p>堆选归基 与初始序列无关 ；<br>堆选快希 不稳定</p>
+</li>
+<li><p><font color="#dd0000">快排</font>：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分</p>
+</li>
+<li><p><font color="#dd0000">拓扑排序</font>运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，即表示有顶点自己以自己为先决条件，这是错误的<br><img src="/image/7-28-2.jpeg" alt></p>
+</li>
+<li><p><font color="#dd0000">基数排序</font>：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</p>
+</li>
+<li><p><font color="#dd0000">冒泡</font></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def bubble_sort(alist):</span><br><span class="line">    n = len(alist)</span><br><span class="line">    for j in range(n-1):</span><br><span class="line">        count = 0   # count == 0 代表没有交换，序列已经有序</span><br><span class="line">        for i in range(0, n-1-j):</span><br><span class="line">            if alist[i] &gt; alist[i + 1]:</span><br><span class="line">                alist[i], alist[i + 1] = alist[i + 1], alist[i]</span><br><span class="line">                count += 1</span><br><span class="line">        if 0 == count:</span><br><span class="line">            break</span><br><span class="line">    return alist</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="#dd0000">选择</font><br>遍历找到最小，与数组第一个交换，次小，放到第二个</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def select_sort(arr):</span><br><span class="line">    for i in range(0, len(arr) - 1):</span><br><span class="line">        min_index = i    # 记录最小值索引</span><br><span class="line">        for j in range(i+1, len(arr)):</span><br><span class="line">            if arr[j] &lt; arr[min_index]:</span><br><span class="line">                min_index = j</span><br><span class="line">        if i != min_index:  # i 不是最小数时，将 i 和最小数交换，容错</span><br><span class="line">            alist[min_index], alist[i] = alist[i], alist[min_index]</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
