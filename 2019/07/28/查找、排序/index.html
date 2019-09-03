@@ -90,7 +90,8 @@
 <meta property="og:image" content="http://yoursite.com/image/7-28-1.jpeg">
 <meta property="og:image" content="http://yoursite.com/image/7-28-2.jpeg">
 <meta property="og:image" content="http://yoursite.com/image/7-28-3.jpeg">
-<meta property="og:updated_time" content="2019-07-28T13:54:35.801Z">
+<meta property="og:image" content="http://yoursite.com/image/9-3-1.jpeg">
+<meta property="og:updated_time" content="2019-09-03T07:50:13.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查找、排序">
 <meta name="twitter:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
@@ -376,7 +377,7 @@
 <li><font color="#dd0000">3. 堆排</font> O(nlongn)<br>堆：完全二叉树，且每个结点值小（大）于左右结点值<br>大顶堆：升序排列 ；小顶堆：降序排序<br>i结点的父结点下标就为<code>(i-1)/2</code>。i结点的左右子结点下标分别为<code>2*i+1</code> 和 <code>2*i+2</code><br>（注：如果根结点是从1开始，则左右孩子结点分别是2i和2i+1。）<br><img src="/image/7-28-3.jpeg" alt></li>
 </ul>
 <ol>
-<li><p>建堆 H[0…1]，构建最大堆</p>
+<li><p>建堆 H[0…n-1]，构建最大堆</p>
 </li>
 <li><p>把堆首（最大值）和堆尾互换</p>
 </li>
@@ -390,13 +391,19 @@
 <li><p><font color="#dd0000">冒泡</font></p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def bubbleSort(alist):</span><br><span class="line">    n = len(alist)</span><br><span class="line">    for j in range(n-1):</span><br><span class="line">        count = 0   # count == 0 代表没有交换，序列已经有序</span><br><span class="line">        for i in range(0, n-1-j):</span><br><span class="line">            if alist[i] &gt; alist[i + 1]:</span><br><span class="line">                alist[i], alist[i + 1] = alist[i + 1], alist[i]</span><br><span class="line">                count += 1</span><br><span class="line">        if 0 == count:</span><br><span class="line">            break</span><br><span class="line">    return alist</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><font color="#dd0000">选择</font><br>遍历找到最小，与数组第一个交换，次小，放到第二个</p>
+<li><p><font color="#dd0000">选择</font><br>遍历找到最小，与数组第一个交换，次小，放到第二个，好坏都是 N2</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def selectSort(arr):</span><br><span class="line">    for i in range(0, len(arr) - 1):</span><br><span class="line">        min_index = i    # 记录最小值索引</span><br><span class="line">        for j in range(i+1, len(arr)):</span><br><span class="line">            if arr[j] &lt; arr[min_index]:</span><br><span class="line">                min_index = j</span><br><span class="line">        if i != min_index:  # i 不是最小数时，将 i 和最小数交换</span><br><span class="line">            alist[min_index], alist[i] = alist[i], alist[min_index]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><font color="#dd0000">插入</font><br>一次一次从左到右，小到大调换，不断扩大有序部分</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def insertionSort(arr):</span><br><span class="line">    for i in range(len(arr)):</span><br><span class="line">        preIndex = i-1</span><br><span class="line">        current = arr[i]</span><br><span class="line">        while preIndex &gt;= 0 and arr[preIndex] &gt; current:</span><br><span class="line">            arr[preIndex+1] = arr[preIndex]</span><br><span class="line">            preIndex -= 1</span><br><span class="line">        arr[preIndex+1] = current</span><br><span class="line">    return arr</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><font color="#dd0000">希尔</font><br>插入排序的改进版本，但是非稳定排序<br>对几乎已经排好序的数据，效率高</p>
+<li><p><font color="#dd0000">希尔</font></p>
+<ol>
+<li>插入排序的改进版本，但是非稳定排序</li>
+<li>对几乎已经排好序的数据，效率高</li>
+<li>定义一个增量序列 Dm &gt; Dm-1 &gt; … &gt; D1 = 1，对每个 Dk-间隔排序<br>每次在 Dk-1-间隔排序后，仍是 Dk 有序的<br>但，若增量不互质，后面小的增量可能根本不起作用</li>
+<li>适合几万量级<br><img src="/image/9-3-1.jpeg" alt></li>
+</ol>
 </li>
 </ul>
 
