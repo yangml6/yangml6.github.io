@@ -79,22 +79,23 @@
 
 
 
-<meta name="description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
+<meta name="description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html   堆选归基 与初始序列无关 ；堆选快希 不稳定 快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分 拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="查找、排序">
 <meta property="og:url" content="http://yoursite.com/2019/07/28/查找、排序/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
+<meta property="og:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html   堆选归基 与初始序列无关 ；堆选快希 不稳定 快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分 拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/.com//7-28-1.jpeg">
 <meta property="og:image" content="http://yoursite.com/.com//7-28-2.jpeg">
 <meta property="og:image" content="http://yoursite.com/.com//9-3-1.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/7-17-1.jpeg">
 <meta property="og:image" content="http://yoursite.com/.com//9-3-1.jpeg">
-<meta property="og:updated_time" content="2019-09-03T07:52:23.056Z">
+<meta property="og:updated_time" content="2019-09-03T07:57:47.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="查找、排序">
-<meta name="twitter:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html  堆选归基 与初始序列无关 ；堆选快希 不稳定  快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分  拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环">
+<meta name="twitter:description" content="一、排序 程序员小吴：https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html   堆选归基 与初始序列无关 ；堆选快希 不稳定 快排：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分 拓扑排序运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，">
 <meta name="twitter:image" content="http://yoursite.com/.com//7-28-1.jpeg">
 
 
@@ -348,14 +349,15 @@
 
       
         <p>一、<font color="#dd0000">排序</font></p>
-<p>程序员小吴：<a href="https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html" target="_blank" rel="noopener">https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html</a><br><img src="/.com//7-28-1.jpeg" alt></p>
+<p>程序员小吴：<a href="https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html" target="_blank" rel="noopener">https://cxyxiaowu.com/articles/2019/06/11/1560233679033.html</a></p>
+<p><img src="/.com//7-28-1.jpeg" alt></p>
 <ul>
-<li><p>堆选归基 与初始序列无关 ；<br>堆选快希 不稳定</p>
-</li>
-<li><p><font color="#dd0000">快排</font>：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分</p>
-</li>
-<li><p><font color="#dd0000">拓扑排序</font>运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，即表示有顶点自己以自己为先决条件，这是错误的<br><img src="/.com//7-28-2.jpeg" alt></p>
-</li>
+<li>堆选归基 与初始序列无关 ；<br>堆选快希 不稳定</li>
+<li><font color="#dd0000">快排</font>：填坑法；选第一个值为pivot，根据 pivot 分成左右两部分</li>
+<li><font color="#dd0000">拓扑排序</font>运算只能用于：有向无环图【拓扑排序是指将偏序集变为全序集，一个偏序有向图是可以表示流程图的，但是显然，这个有向图一旦出现了环，即表示有顶点自己以自己为先决条件，这是错误的</li>
+</ul>
+<p><img src="/.com//7-28-2.jpeg" alt></p>
+<ul>
 <li><p><font color="#dd0000">基数排序</font>：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</p>
 </li>
 <li><p><font color="#dd0000">1. 快排</font> O(nlongn)<br>pivot partition recursive<br>原地排序</p>
@@ -374,8 +376,10 @@
 </li>
 </ol>
 <ul>
-<li><font color="#dd0000">3. 堆排</font> O(nlongn)<br>堆：完全二叉树，且每个结点值小（大）于左右结点值<br>大顶堆：升序排列 ；小顶堆：降序排序<br>i结点的父结点下标就为<code>(i-1)/2</code>。i结点的左右子结点下标分别为<code>2*i+1</code> 和 <code>2*i+2</code><br>（注：如果根结点是从1开始，则左右孩子结点分别是2i和2i+1。）<br><img src="/.com//9-3-1.jpeg" alt></li>
+<li><font color="#dd0000">3. 堆排</font> O(nlongn)<br>堆：完全二叉树，且每个结点值小（大）于左右结点值<br>大顶堆：升序排列 ；小顶堆：降序排序<br>i结点的父结点下标就为<code>(i-1)/2</code>。i结点的左右子结点下标分别为<code>2*i+1</code> 和 <code>2*i+2</code><br>（注：如果根结点是从1开始，则左右孩子结点分别是2i和2i+1。）</li>
 </ul>
+<p><img src="/.com//9-3-1.jpeg" alt></p>
+<p><img src="/images/7-17-1.jpeg" alt></p>
 <ol>
 <li><p>建堆 H[0…n-1]，构建最大堆</p>
 </li>
