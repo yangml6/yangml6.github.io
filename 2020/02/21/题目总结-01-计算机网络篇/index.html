@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="1、TCP 三次握手和四次挥手（1）为什么握三次，挥四次 + 过程图 三次握手  （1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加1，这样选择 SYN 序号可以防止网络中被延迟的">
+<meta name="description" content="一、TCP 三次握手和四次挥手（1）为什么握三次，挥四次 + 过程图 三次握手  （1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加 1，这样选择 SYN 序号可以防止网络中被延迟">
 <meta name="keywords" content="基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题目总结-01-计算机网络篇">
 <meta property="og:url" content="http://yoursite.com/2020/02/21/题目总结-01-计算机网络篇/index.html">
 <meta property="og:site_name" content="YML&#39;s Hexo">
-<meta property="og:description" content="1、TCP 三次握手和四次挥手（1）为什么握三次，挥四次 + 过程图 三次握手  （1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加1，这样选择 SYN 序号可以防止网络中被延迟的">
+<meta property="og:description" content="一、TCP 三次握手和四次挥手（1）为什么握三次，挥四次 + 过程图 三次握手  （1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加 1，这样选择 SYN 序号可以防止网络中被延迟">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/20-02-21-1.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/20-02-21-2.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/20-02-21-3.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/20-02-21-4.jpeg">
-<meta property="og:updated_time" content="2020-02-27T13:24:44.644Z">
+<meta property="og:updated_time" content="2020-02-27T14:00:26.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="题目总结-01-计算机网络篇">
-<meta name="twitter:description" content="1、TCP 三次握手和四次挥手（1）为什么握三次，挥四次 + 过程图 三次握手  （1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加1，这样选择 SYN 序号可以防止网络中被延迟的">
+<meta name="twitter:description" content="一、TCP 三次握手和四次挥手（1）为什么握三次，挥四次 + 过程图 三次握手  （1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加 1，这样选择 SYN 序号可以防止网络中被延迟">
 <meta name="twitter:image" content="http://yoursite.com/images/20-02-21-1.jpeg">
 
 
@@ -347,10 +347,10 @@
       
 
       
-        <h4 id="1、TCP-三次握手和四次挥手"><a href="#1、TCP-三次握手和四次挥手" class="headerlink" title="1、TCP 三次握手和四次挥手"></a>1、TCP 三次握手和四次挥手</h4><h5 id="（1）为什么握三次，挥四次-过程图"><a href="#（1）为什么握三次，挥四次-过程图" class="headerlink" title="（1）为什么握三次，挥四次 + 过程图"></a>（1）为什么握三次，挥四次 + 过程图</h5><ul>
+        <h4 id="一、TCP-三次握手和四次挥手"><a href="#一、TCP-三次握手和四次挥手" class="headerlink" title="一、TCP 三次握手和四次挥手"></a>一、TCP 三次握手和四次挥手</h4><h5 id="（1）为什么握三次，挥四次-过程图"><a href="#（1）为什么握三次，挥四次-过程图" class="headerlink" title="（1）为什么握三次，挥四次 + 过程图"></a>（1）为什么握三次，挥四次 + 过程图</h5><ul>
 <li><font color="#dd0000">三次握手</font><br><img src="/images/20-02-21-1.jpeg" alt></li>
 </ul>
-<p>（1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；<br>（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加1，这样选择 SYN 序号可以防止网络中被延迟的分组又被重新传送，导致错误解释）；<br>（3）client 置 ACK = ISN+1，以对 server 进行确认。</p>
+<p>（1）client 端发一个 SYN 段，指明：（a)要连接的 sever 端口；（b)初始序列号 ISN；<br>（2）server 返回包含自己 ISN 的 SYN，并将确认序号置 ACK = ISN+1，一个 SYN 占用一个序号（为 32bit 计数器，每 4ms 增加 1，这样选择 SYN 序号可以防止网络中被延迟的分组又被重新传送，导致错误解释）；<br>（3）client 置 ACK = ISN+1，以对 server 进行确认。</p>
 <ul>
 <li><font color="#dd0000">四次挥手</font><br><img src="/images/20-02-21-2.jpeg" alt><br>（1）挥四次，是由于 TCP 是半关闭（half close）<br> TCP 是全双工，每个方向必须单独关闭，完成的发 FIN<br>（2）发 FIN 方主动关闭，接收 FIN 方被动关闭，此时不再接收，但仍可发送</li>
 </ul>
@@ -367,7 +367,7 @@
 运输层（TCP、UDP):为两台主机上的应用程序提供端到端通信
 网络层（IP、ICMP、IGMP):处理分组在网络中的活动，如选路
 链路层（设备驱动程序、接口卡):电缆，物理接口</code></pre><p>建议阅读：《TCP/IP 详解》卷1、2、3</p>
-<h4 id="2、HTTP、HTTPS-协议"><a href="#2、HTTP、HTTPS-协议" class="headerlink" title="2、HTTP、HTTPS 协议"></a>2、HTTP、HTTPS 协议</h4><p>（1）HTTPS = HTTP + SSL（Secure Sockets Layer）<br>（2）二者区别<br>    端口（80 vs 443）、协议层、加密、优缺点<br>（3）HTTP1.0 非持久连接<br>    HTTP1.1 持久连接（带流水线、不带流水线，在消息头设置 Connection：close）<br>（4）请求和响应格式<br>（5）IP 地址，A-E 类，范围，点分十进制</p>
+<h4 id="二、HTTP、HTTPS-协议"><a href="#二、HTTP、HTTPS-协议" class="headerlink" title="二、HTTP、HTTPS 协议"></a>二、HTTP、HTTPS 协议</h4><p>（1）HTTPS = HTTP + SSL（Secure Sockets Layer）<br>（2）二者区别<br>    端口（80 vs 443）、协议层、加密、优缺点<br>（3）HTTP1.0 非持久连接<br>    HTTP1.1 持久连接（带流水线、不带流水线，在消息头设置 Connection：close）<br>（4）请求和响应格式<br>（5）IP 地址，A-E 类，范围，点分十进制</p>
 
       
     </div>
@@ -554,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、TCP-三次握手和四次挥手"><span class="nav-number">1.</span> <span class="nav-text">1、TCP 三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）为什么握三次，挥四次-过程图"><span class="nav-number">1.1.</span> <span class="nav-text">（1）为什么握三次，挥四次 + 过程图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、TCP-状态转换图"><span class="nav-number">1.2.</span> <span class="nav-text">2、TCP 状态转换图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、讲几点-TCP-和-UDP-区别"><span class="nav-number">1.3.</span> <span class="nav-text">3、讲几点 TCP 和 UDP 区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、TCP-time-wait-是多久（2MSL）"><span class="nav-number">1.4.</span> <span class="nav-text">4、TCP time_wait 是多久（2MSL）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、TCP-IP-协议族，四层"><span class="nav-number">1.5.</span> <span class="nav-text">5、TCP/IP 协议族，四层</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、HTTP、HTTPS-协议"><span class="nav-number">2.</span> <span class="nav-text">2、HTTP、HTTPS 协议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、TCP-三次握手和四次挥手"><span class="nav-number">1.</span> <span class="nav-text">一、TCP 三次握手和四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）为什么握三次，挥四次-过程图"><span class="nav-number">1.1.</span> <span class="nav-text">（1）为什么握三次，挥四次 + 过程图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、TCP-状态转换图"><span class="nav-number">1.2.</span> <span class="nav-text">2、TCP 状态转换图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、讲几点-TCP-和-UDP-区别"><span class="nav-number">1.3.</span> <span class="nav-text">3、讲几点 TCP 和 UDP 区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、TCP-time-wait-是多久（2MSL）"><span class="nav-number">1.4.</span> <span class="nav-text">4、TCP time_wait 是多久（2MSL）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、TCP-IP-协议族，四层"><span class="nav-number">1.5.</span> <span class="nav-text">5、TCP/IP 协议族，四层</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、HTTP、HTTPS-协议"><span class="nav-number">2.</span> <span class="nav-text">二、HTTP、HTTPS 协议</span></a></li></ol></div>
             
 
           </div>
